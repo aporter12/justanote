@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Just a Note</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet"> 
+	<script src="js/functions.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+
+	<header>
+		<i id="back" class="fa fa-angle-left" aria-hidden="true" onclick="back()"></i>
+		<img id="logo-note" src="logo.svg">
+	</header>
+
+	<article>
+		<div id="notas">
+			<textarea id="note-title"></textarea>
+			<textarea id="note-text"></textarea>
+			<i id="inNote-delete" class="fa fa-trash" aria-hidden="true" onclick="eraseNote()"></i>
+			<button id="save-note" onclick="saveNote()">Save Note</button>
+			<span id="success-save">The note was successfully saved.</span>
+		</div>
+	</article>
+
+	<script>
+		window.addEventListener('load', openNote, true);
+	</script>
+
+</body>
+</html>

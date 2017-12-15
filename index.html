@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Just a Note</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet"> 
+	<script src="js/functions.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+
+	<header>
+		<img id="logo" src="logo.svg">
+		<a id="logout" href="#" onclick="logout()">Log Out</a>
+	</header>
+
+	<article>
+		<div id="notas"><!-- 
+			<div class="nota">
+				<span  onclick="goToNote(noteId)">Título de la primer nota aqst asdertgfd</span>
+				<i class="fa fa-trash" aria-hidden="true" onclick="eraseNote(noteId)"></i>
+			</div> -->
+
+			<i onclick="newNote()" id="add" class="fa fa-plus" aria-hidden="true"></i>
+		</div>
+	</article>
+
+	<div id="confirm-delete">
+		<p>The following note is going to be erased permanently:</p>
+		<p id="noteTitle-to-erase">Example note title for delete asdas sad sad</p>
+		<button onclick="confirmDelete()" id="confirm-delete-btn">Confirm</button>
+		<button onclick="cancelDelete()" id="cancel-delete-btn">Cancel</button>
+	</div>
+
+<script>
+	window.addEventListener('load', loadNotes, true);
+
+	function goToNote(noteId){
+		window.location.assign('note.html');
+		localStorage.setItem('activeNoteId', noteId);	
+	}
+</script>
+
+</body>
+</html>

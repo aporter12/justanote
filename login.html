@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login | Just a Note</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+	<script src="js/functions.js"></script>
+</head>
+
+<body>
+
+	<img id="logo-login" src="logo.svg">
+	<main id="loginbox">
+		<h1>Just a Note</h1>
+		<div class="login">
+			<input type="text" id="user" placeholder="Username" onkeypress="checkEnter()">
+			<input type="password" id="password" placeholder="Password" onkeypress="checkEnter()"><br>
+			<span class="error"></span><br><br>
+			<button onclick="login()">Login</button><br>
+			<a href="signup.html">Sign Up</a>
+
+		</div>
+	</main>
+
+	<script>
+		function checkEnter(){
+			if (window.event.keyCode == 13){
+				login();
+			}
+		}
+	</script>
+
+</body>
+</html>
