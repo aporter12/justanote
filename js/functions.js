@@ -1,4 +1,5 @@
-var baseURL = "http://187.134.251.100/justanote/php/"
+// var baseURL = "http://187.134.251.100/justanote/php/"
+var baseURL = "http://148.220.63.171/tallerMoviles/justanote/php/";
 
 function loadNotes(){
 	if (!localStorage.getItem('userId')) {
