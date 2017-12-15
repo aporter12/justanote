@@ -1,6 +1,6 @@
 // var baseURL = "http://187.134.251.100/justanote/php/"
-var baseURL = "http://148.220.63.171/tallerMoviles/justanote/php/";
-
+var baseURL = "http://148.220.208.119/tallerMoviles/justanote/php/";
+// 148.220.208.119
 function loadNotes(){
 	if (!localStorage.getItem('userId')) {
 		window.location.assign('login.html');
