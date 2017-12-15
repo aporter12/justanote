@@ -1,3 +1,5 @@
+var baseURL = "http://187.134.251.100/justanote/php/"
+
 function loadNotes(){
 	if (!localStorage.getItem('userId')) {
 		window.location.assign('login.html');
@@ -6,7 +8,7 @@ function loadNotes(){
 	loggedUserId = localStorage.getItem('userId');
 
 	notesAjax = new XMLHttpRequest();
-	notesAjax.open('GET','http://189.166.54.110/justanote/php/notes.php?uId='+loggedUserId);
+	notesAjax.open('GET',baseURL + 'notes.php?uId='+loggedUserId);
 	notesAjax.send();
 	notesAjax.onreadystatechange = function(){
 		if (notesAjax.readyState == 4 && notesAjax.status == 200){
@@ -29,7 +31,7 @@ function login(){
 	if(user != "" && pass != "") {
 		//LOGIN
 		logAjax = new XMLHttpRequest();
-		logAjax.open('GET','http://189.166.54.110/justanote/php/login.php?u='+user+'&p='+pass);
+		logAjax.open('GET',baseURL + 'login.php?u='+user+'&p='+pass);
 		logAjax.send();
 		logAjax.onreadystatechange = function(){
 			if (logAjax.readyState==4 && logAjax.status == 200) {
@@ -61,7 +63,7 @@ function signup(){
 	if(user != "" && pass != "" && pass2 != "") {
 		if (pass === pass2) {
 			signupAjax = new XMLHttpRequest();
-			signupAjax.open('GET','http://189.166.54.110/justanote/php/signup.php?u='+user+'&p='+pass);
+			signupAjax.open('GET',baseURL + 'signup.php?u='+user+'&p='+pass);
 			signupAjax.send();
 			signupAjax.onreadystatechange = function(){
 				if (signupAjax.readyState==4 && signupAjax.status == 200) {
@@ -114,7 +116,7 @@ function openNote(){
 		activeNoteText = "";
 
 		notesAjax = new XMLHttpRequest();
-		notesAjax.open('GET','http://189.166.54.110/justanote/php/notes.php?uId='+loggedUserId);
+		notesAjax.open('GET',baseURL + 'notes.php?uId='+loggedUserId);
 		notesAjax.send();
 		notesAjax.onreadystatechange = function(){
 			if (notesAjax.readyState == 4 && notesAjax.status == 200){
@@ -147,7 +149,7 @@ function saveNote(){
 		if(activeNoteTitle.length <= 40 && activeNoteText.length <= 10000){
 			activeNoteId = localStorage.getItem('activeNoteId');
 			editNoteAjax = new XMLHttpRequest();
-			editNoteAjax.open('GET','http://189.166.54.110/justanote/php/editNote.php?anId='+activeNoteId+
+			editNoteAjax.open('GET',baseURL + 'editNote.php?anId='+activeNoteId+
 								'&anTi='+activeNoteTitle+'&anTx='+activeNoteText);
 			editNoteAjax.send();
 			editNoteAjax.onreadystatechange = function(){
@@ -193,7 +195,7 @@ function saveNote(){
 	else{
 		if(activeNoteTitle.length <= 40 && activeNoteText.length <= 10000){			
 			newNoteAjax = new XMLHttpRequest();
-			newNoteAjax.open('GET','http://189.166.54.110/justanote/php/newNote.php?uId='+loggedUserId+'&anTi='+
+			newNoteAjax.open('GET',baseURL + 'newNote.php?uId='+loggedUserId+'&anTi='+
 								activeNoteTitle+'&anTx='+activeNoteText);
 			newNoteAjax.send();
 			newNoteAjax.onreadystatechange = function(){
@@ -241,7 +243,7 @@ function eraseNote(noteId){
 function confirmDelete(){
 	noteIdToDelete = localStorage.getItem('noteIdToDrop');
 	deleteNoteAjax = new XMLHttpRequest();
-	deleteNoteAjax.open('GET','http://189.166.54.110/justanote/php/deleteNote.php?nId='+noteIdToDelete);
+	deleteNoteAjax.open('GET',baseURL + 'deleteNote.php?nId='+noteIdToDelete);
 	deleteNoteAjax.send();
 	deleteNoteAjax.onreadystatechange = function(){
 		if (deleteNoteAjax.readyState == 4 && deleteNoteAjax.status == 200){
